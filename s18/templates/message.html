@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <section class="landing">
+        <div class="dark-overlay">
+            <div class="landing-inner">
+                <h1 class="x-large">Developer Connector</h1>
+                {% if messages %}
+                    {% for message in messages %}<p class="lead">{{ message }}</p>{% endfor %}
+                {% else %}
+                    <p class="lead">there is no message!</p>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+{% endblock content %}
