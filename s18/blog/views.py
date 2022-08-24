@@ -1,8 +1,11 @@
-import imp
+import json
 from django.shortcuts import render
 from .models import Post
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
+
+
 # Create your views here.
 
 
@@ -27,3 +30,8 @@ def posts(request):
 def post(request, post_slug):
     context = {}
     return render(request, 'blog/post.html', context=context)
+
+
+def api_test(request):
+    data = {"name": "mohammad", "age": 31}
+    return HttpResponse(json.dumps(data), content_type="application/json")
